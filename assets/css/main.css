@@ -1,0 +1,39 @@
+/* Ruta: assets/css/main.css */
+
+/* 1. Importar variables */
+@import url('./variables.css');
+
+/* 2. Definición de la Tipografía Personalizada */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/CustomFont-Regular.woff2') format('woff2');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+    font-display: swap; /* Buena práctica para la carga de fuentes */
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/CustomFont-Bold.woff2') format('woff2');
+    font-weight: 700; /* Negrita */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 3. Estilos Globales  */
+
+/* Aplicar la tipografía al cuerpo*/
+body {
+    font-family: var(--font-body); 
+    color: var(--color-text-body);
+}
+
+/* Aplicar el espaciado en un contenedor genérico */
+.content-wrapper {
+    padding: var(--spacing-md);
+}
+
+/*  Clase para forzar el uso de la fuente del título */
+.heading-custom {
+    font-family: var(--font-heading) !important;
+}
