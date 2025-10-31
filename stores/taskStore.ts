@@ -21,7 +21,7 @@ export const useTaskStore = defineStore('taskStore', {
         const allTasks = await tasksApi.list();
 
         //Actualiza reactivo
-        this.allTasksCache.splice(0, this.allTasksCache.length, ...allTasks);
+        this.allTasksCache.splice(0, this.allTasksCache.length, ...allTasks); 
 
         const filteredTasks = this.q
           ? this.allTasksCache.filter((t: any) =>
