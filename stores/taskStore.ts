@@ -49,6 +49,20 @@ export const useTaskStore = defineStore('taskStore', {
     },
 
 
+
+
+
+    //Maneja el cambio de página
+    onPage(newPage: number) {
+        this.page = newPage;
+        this.fetchList();
+    },
+// Maneja el evento de búsqueda
+    onSearch() {
+      this.page = 1; // 1. Reiniciar la paginación al buscar
+      this.fetchList(); // 2. Recargar la lista aplicando el filtro 'this.q'
+    },
+
     async onDelete(task: any) {
       if (!confirm('¿Estás seguro de eliminar esta tarea?')) return;
       const tasksApi = useTasks();
